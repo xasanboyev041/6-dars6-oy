@@ -1,0 +1,13 @@
+.wrapper-nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #353434;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  list-style: none;
+}
+.wrapper-nav-li {
+  color: white;
+  text-decoration: none;
+}

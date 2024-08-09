@@ -4,17 +4,18 @@ import { useNavigate } from "react-router-dom";
 import "./Login.css";
 
 const Login = () => {
-  const navigate = useNavigate("");
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleUserLogin = (e) => {
     e.reventDefault();
 
-    axios.post("/auth/login/", { email, password }).then((response) => {
+    axios.post("/auth/login/", { email, password })
+      .then((response) => {
       if (response.status === 201) {
         localStorage.setItem("token", response.data.access_token);
-        navigate("profile");
+        navigate("/profile");
       }
     });
   };
@@ -36,7 +37,9 @@ const Login = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
 
-          <button className="button-logo" type="submit">Login</button>
+          <button className="button-logo" type="submit">
+            Login
+          </button>
         </form>
       </div>
     </div>
